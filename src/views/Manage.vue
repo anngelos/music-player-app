@@ -1,17 +1,18 @@
 <script>
 import AppUpload from '../components/Upload.vue';
+import CompositionItem from '../components/CompositionItem.vue';
 import { songsCollection, auth } from '../includes/firebase';
 
 export default {
   name: "Manage",
-  components: { AppUpload },
+  components: { AppUpload, CompositionItem },
   data() {
     return {
       songs: []
     }
   },
   async created() {
-    const snapshot = songsCollection.where("uid", "==", auth.currentUser.uid).get();
+    const snapshot = await songsCollection.where("uid", "==", auth.currentUser.uid).get();
 
     snapshot.forEach((document) => {
       const song = {
@@ -39,6 +40,7 @@ export default {
             </div>
             <div class="p-6">
               <!-- Composition Items -->
+              <CompositionItem v-for="song in songs" :key="song.docID"/>
             </div>
           </div>
         </div>
