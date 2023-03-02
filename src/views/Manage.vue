@@ -8,7 +8,8 @@ export default {
   components: { AppUpload, CompositionItem },
   data() {
     return {
-      songs: []
+      songs: [],
+      unsavedFlag: false,
     }
   },
   async created() {
@@ -31,6 +32,17 @@ export default {
       };
 
       this.songs.push(song);
+    },
+    updateUnsavedFlag(value) {
+      this.unsavedFlag = value;
+    }
+  },
+  beforeRouteLeave(to, from, next) {
+    if (!this.unsavedFlag) {
+      next();
+    } else {
+      const leave = confirm("You have unsaved changes. Are you sure you want to leave?");
+      next(leave);
     }
   }
 }
@@ -50,7 +62,15 @@ export default {
             </div>
             <div class="p-6">
               <!-- Composition Items -->
-              <CompositionItem v-for="(song, i) in songs" :key="song.docID" :song="song" :updateSong="updateSong" :index="i" :removeSong="removeSong"/>
+              <CompositionItem
+                v-for="(song, i) in songs"
+                :key="song.docID"
+                :song="song"
+                :updateSong="updateSong"
+                :index="i"
+                :removeSong="removeSong"
+                :updateUnsavedFlag="updateUnsavedFlag"
+              />
             </div>
           </div>
         </div>
