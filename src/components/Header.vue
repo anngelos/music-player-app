@@ -36,7 +36,7 @@ export default {
         <ul class="flex flex-row mt-1">
           <!-- Navigation Links -->
           <li v-if="!userStore.userLoggedIn">
-            <a class="px-2 text-white" href="#" @click.prevent="toggleAuthModal">Login / Register</a>
+            <a class="px-2 text-white" href="#" @click.prevent="toggleAuthModal">Login</a>
           </li>
 
           <template v-else>
