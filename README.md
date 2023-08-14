@@ -1,58 +1,18 @@
-# music-app
+# Music Player App
 
+Project carried out in the course "Complete Vue Developer 2023: Zero to Mastery (Pinia, Vitest)" on the Udemy platform, instructed by Andrei Neagoie and Luis Ramirez Jr. The project is a music player that resembles a social network. In it, the user can register and log in to the platform, post comments, and even upload their own songs, which will be stored in the Google database, Firebase. These songs can be listened to at any time and from any device.
+In this course, I learned both the fundamentals of Vue.js and more advanced concepts. I also learned about unit testing and got introduced to a new state management system, Pinia.
 
-This template should help get you started developing with Vue 3 in Vite.
+## Stack
 
-## Recommended IDE Setup
+HTML5 | CSS3 | Tailwind CSS | JavaScript | Vue.js | Pinia | Firebase | Jest | Vitest
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## Run the project
 
-## Customize configuration
+After downloading the project to your machine, enter the project's root folder and install the dependencies using the command `npm install`. Then, run the command `npm run dev` and access the localhost address with the correct port number that will be displayed in your terminal.
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+## Run Unit Tests
 
-## Project Setup
+Through the terminal, navigate to the project's root folder and execute the command `npm run test:unit`. Your browser will initiate the entire process and run all unit tests within the project.
 
-```sh
-npm install
-```````
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-npm run test:unit
-```
-
-### Run End-to-End Tests with [Cypress](https://www.cypress.io/)
-
-```sh
-npm run test:e2e:dev
-```
-
-This runs the end-to-end tests against the Vite development server.
-It is much faster than the production build.
-
-But it's still recommended to test the production build with `test:e2e` before deploying (e.g. in CI environments):
-
-```sh
-npm run build
-npm run test:e2e
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+https://music-player-app-amber.vercel.app/
